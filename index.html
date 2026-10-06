@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman Solver</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>Hangman Guesser Website</header>
+
+<!-- Step 1: Initialize Word Length -->
+<div id="setup-container" class="setup-section">
+    <form id="letter-count-form">
+        <label for="count-input">Word Length: </label>
+        <input type="number" id="count-input" name="count" min="1" max="20" required placeholder="e.g. 5">
+        <button type="submit">Start</button>
+    </form>
+</div>
+
+<!-- Step 2: Input Pattern and Excluded Letters -->
+<div id="solver-container" class="solver-section hidden">
+    <p>Use underscores (_) for unknown letters (e.g., <code>c_a_t</code>)</p>
+    <p>
+        <input type="text" id="pattern-display" class="pattern-input" placeholder="">
+    </p>
+    <p>
+        <label for="wrong-letters">Wrong Guesses: </label>
+        <input type="text" id="wrong-letters" placeholder="e.g. e, x, q">
+    </p>
+    
+    <div class="results">
+        <h3>Top Letter Suggestions:</h3>
+        <p id="letter-suggestions" class="suggestions">-</p>
+        
+        <h3>Matching Words Found:</h3>
+        <p id="word-matches">-</p>
+    </div>
+    
+    <button id="reset-btn">Reset</button>
+</div>
+
+<!-- Link to your external JavaScript -->
+<script src="script.js"></script>
+</body>
+</html>
